@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> YOUR CLEO </title>
+    <style>
+                @import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@500&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #0d173c;
+            font-family: 'Product Sans Medium', sans-serif;
+        }
+        .content h1 {
+            font-size: 30pt;
+            margin-top: 50px;
+            margin-left: 50px;
+            color: #f7f6f7;
+            margin-bottom: 25px;
+            white-space: pre-line;
+        }
+        .content p {
+            font-size: 12pt;
+            margin-left: 50px;
+            margin-right: 50px;
+            color: #f7f6f7;
+
+        }
+        img {
+            margin-top: 50px;
+            display: none;
+            width: 300px;
+            height: auto;
+        }
+        button {
+            margin: 50px;
+            margin-bottom: 300px; 
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #f7f6f7; /* Verde */
+            color: #0d173c; /* Testo bianco */
+            border: #f7f6f7;
+            font-family: 'Product Sans Medium', sans-serif; /* Font Roboto */
+        }
+        
+        
+        .cleo-img {
+            margin-bottom: 25px;
+            position: absolute;
+            bottom: 0;
+            width: 75px;
+            height: auto;
+            display: block;  
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="content">
+        <h1>GENERATIVE <br> LOGO</h1>
+        <p>Starting from a modular grid and utilizing software to parametrically adjust the pyramid's points, our logo is generated to be dynamic.</p>
+    </div>
+    
+    <img id="randomImage" class="random-img" src="" alt="Immagine Casuale">
+    <button id="randomButton" onclick="showRandomImage()"> GENERATE LOGO </button>
+    <img id="cleo-img" class="cleo-img" src="cleo-img.jpg" alt="Immagine Iniziale">
+
+
+    <script>
+        function showRandomImage() {
+            const images = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg', 'image11.jpg', 'image12.jpg', 'image13.jpg', 'image14.jpg', 'image15.jpg', 'image16.jpg', 'image17.jpg', 'image18.jpg', 'image19.jpg', 'image20.jpg'];
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const randomImage = images[randomIndex];
+            const imgElement = document.getElementById('randomImage');
+            imgElement.src = randomImage;
+            imgElement.style.display = 'block';
+            
+            const contentElement = document.getElementById('content');
+            contentElement.style.display = 'none';
+            
+            
+            document.body.style.backgroundColor = '#0d173c'; /* Cambio del colore di sfondo */
+            document.body.style.color = 'black';
+        }
+    </script>
+</body>
+</html>
